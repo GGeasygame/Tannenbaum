@@ -10,10 +10,16 @@ public class Main {
 
         int blaetter = scanner.nextInt();
         blaetter += 1;
-        int mitte = blaetter(blaetter);
+
+        System.out.println("Wie hoch sollte der Stamm sein?");
 
         int hoeheBaumstamm = scanner.nextInt();
-        hoeheBaumstamm(hoeheBaumstamm, mitte);
+
+        System.out.println("Wie breit sollte der Stamm sein?");
+
+        int breite= scanner.nextInt();
+        int mitte = blaetter(blaetter);
+        hoeheBaumstamm(hoeheBaumstamm, mitte, breite);
 
     }
     public static int blaetter(int blaetter){
@@ -21,13 +27,15 @@ public class Main {
         for(int i= 0; i < blaetter; i++) {
             System.out.println(new String(new char[i]).replace("\0", "* "));
             System.out.print(new String(new char[blaetter - i]).replace("\0", " "));
-            mitte = blaetter - 1;
+            mitte = blaetter;
         }
         return mitte;
     }
-    public static void hoeheBaumstamm(int hoeheBaumstamm, int mitte){
+    public static void hoeheBaumstamm(int hoeheBaumstamm, int mitte, int breite){
+        System.out.print(new String(new char[mitte - (breite/2)-1]).replace("\0", " "));
         for(int i= 0; i < hoeheBaumstamm; i++) {
-            System.out.println();
+            System.out.println("|" + new String(new char[breite]).replace("\0", " ") + "|" );
+            System.out.print(new String(new char[mitte - (breite/2)]).replace("\0", " "));
         }
     }
 }
