@@ -10,14 +10,24 @@ public class Main {
 
         int blaetter = scanner.nextInt();
         blaetter += 1;
-        blaetter(blaetter);
+        int mitte = blaetter(blaetter);
 
+        int hoeheBaumstamm = scanner.nextInt();
+        hoeheBaumstamm(hoeheBaumstamm, mitte);
 
     }
-    public static void blaetter(int blaetter){
+    public static int blaetter(int blaetter){
+        int mitte = 0;
         for(int i= 0; i < blaetter; i++) {
-            System.out.println(new String(new char[blaetter - i]).replace("\0", "* "));
-
+            System.out.println(new String(new char[i]).replace("\0", "* "));
+            System.out.print(new String(new char[blaetter - i]).replace("\0", " "));
+            mitte = blaetter - 1;
+        }
+        return mitte;
+    }
+    public static void hoeheBaumstamm(int hoeheBaumstamm, int mitte){
+        for(int i= 0; i < hoeheBaumstamm; i++) {
+            System.out.println();
         }
     }
 }
